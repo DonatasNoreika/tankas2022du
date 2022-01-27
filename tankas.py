@@ -48,7 +48,19 @@ class Tankas:
             self._suviai[2] += 1
         if self._kryptis == "R":
             self._suviai[3] += 1
+        if self._tikrinti_suvi():
+            print("Pataikei!")
+            self._generuoti_priesa()
         self.info()
 
-
+    def _tikrinti_suvi(self):
+        if self._x == self._prieso_x and self._kryptis == "Š" and self._y < self._prieso_y:
+            return True
+        if self._x == self._prieso_x and self._kryptis == "P" and self._y > self._prieso_y:
+            return True
+        if self._y == self._prieso_y and self._kryptis == "R" and self._x < self._prieso_x:
+            return True
+        if self._y == self._prieso_y and self._kryptis == "V" and self._x > self._prieso_x:
+            return True
+        return False
 
