@@ -12,6 +12,14 @@ class Tankas:
         self._generuoti_priesa()
         self._taskai = 100
 
+    def ar_ne_pabaiga(self):
+        if self._taskai <= 0:
+            print("\nŽaidimo pabaiga")
+            print(f"Nukauta priešų: {self._nukauti}")
+            print(f"Šūviai: {self._suviai}, viso: {sum(self._suviai)}")
+            return True
+        return False
+
     def info(self):
         print(f"Koordinatės: x: {self._x}, y: {self._y}, kryptis: {self._kryptis}")
         print(f"Šūviai: {sum(self._suviai)}, kryptys: {self._suviai}")

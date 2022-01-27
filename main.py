@@ -4,6 +4,8 @@ from tankas import Tankas
 tankas = Tankas()
 tankas.info()
 while True:
+    if tankas.ar_ne_pabaiga():
+        break
     pasirinkimas = input("Judėti į \ns - šiaurę\np - pietus\nv - vakarus\nr - rytus\nx - iššauti\ni = informacija\nb - baigti žaidimą\n")
     if pasirinkimas == "s":
         tankas.siaure()
