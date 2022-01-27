@@ -10,11 +10,13 @@ class Tankas:
         self._prieso_y = 0
         self._nukauti = 0
         self._generuoti_priesa()
+        self._taskai = 100
 
     def info(self):
         print(f"Koordinatės: x: {self._x}, y: {self._y}, kryptis: {self._kryptis}")
         print(f"Šūviai: {sum(self._suviai)}, kryptys: {self._suviai}")
         print(f"Priešo koordinatės: x: {self._prieso_x}, y: {self._prieso_y}, nukauta: {self._nukauti}")
+        print(f'Taškai: {self._taskai}')
 
     def _generuoti_priesa(self):
         self._prieso_x = randint(-10, 10)
@@ -23,21 +25,25 @@ class Tankas:
     def siaure(self):
         self._y += 1
         self._kryptis = "Š"
+        self._taskai -= 10
         self.info()
 
     def pietus(self):
         self._y -= 1
         self._kryptis = "P"
+        self._taskai -= 10
         self.info()
 
     def vakarai(self):
         self._x -= 1
         self._kryptis = "V"
+        self._taskai -= 10
         self.info()
 
     def rytai(self):
         self._x += 1
         self._kryptis = "R"
+        self._taskai -= 10
         self.info()
 
     def sauti(self):
@@ -52,6 +58,7 @@ class Tankas:
         if self._tikrinti_suvi():
             print("Pataikei!")
             self._nukauti += 1
+            self._taskai += 50
             self._generuoti_priesa()
         self.info()
 
