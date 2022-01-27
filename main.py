@@ -13,3 +13,5 @@ while True:
         tankas.vakarai()
     if pasirinkimas == "r":
         tankas.rytai()
+    if pasirinkimas == "x":
+        tankas.sauti()
